@@ -2,6 +2,12 @@
 name: prove-it-bro
 description: Produce undeniable proof that something works - screenshots, videos, raw outputs, logs - bundled in one plain HTML page, with a ledger of everything odd found on the way.
 disable-model-invocation: true
+metadata:
+  credits:
+    - skill: show-me
+      author: Dex Horthy
+      organisation: Humanlayer
+      url: https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md
 ---
 
 Show me that it works. Undeniable proof: anything a skeptic could replay and check, not a description of what you believe. Screenshots, videos, raw command transcripts, test logs, database rows, diffs. Dazzle me, but with evidence, never with decoration.
@@ -13,7 +19,7 @@ The subject is whatever the conversation is about: a feature, a fix, a migration
 1. **List the claims.** Write down every behaviour the subject promises, one line each, numbered. Include the negative cases: what must be refused, must fail, must stay unchanged. Done when a reader could tick each line without reading anything else.
    Where claims depend on two dimensions (who times what, input times state, environment times action), lay them out as a **matrix**: every cell is a claim with its own verdict, and no cell stays empty, "not applicable" included. The matrix goes into the index as a table, one row per dimension value, verdict colour per cell.
 
-2. **Sketch the expectation per claim.** Before capturing anything, draw how it is supposed to go: a sequence, a before/after diff, a state flow, whichever is smallest (the show-me skill's forms). The expectation goes into the index above the evidence, so the reader compares "should" with "did".
+2. **Sketch the expectation per claim.** Before capturing anything, draw how it is supposed to go: a sequence, a before/after diff, a state flow, whichever is smallest (forms in [`sketch-forms.md`](sketch-forms.md)). The expectation goes into the index above the evidence, so the reader compares "should" with "did".
 
 3. **Pick the witness per claim.** The strongest evidence available, in this order: video of the real thing, screenshot set, raw command transcript with its output, test run log, data excerpt, diff. Real environment (rig, staging, disposable copy), never production unless told. One claim may need several witnesses; a witness that proves nothing is dead weight.
 
