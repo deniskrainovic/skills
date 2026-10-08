@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proof: SUBJECT</title>
+<style>
+:root{--ink:#1a1a1a;--muted:#666;--line:#ddd;--ok:#e6f4ea;--fail:#fde2e2;--mark:#fff3a3}
+body{font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);margin:0;padding:16px;max-width:1400px}
+h1{font-size:24px;margin:0 0 4px}
+h2{font-size:19px;margin:36px 0 8px;border-top:1px solid var(--line);padding-top:16px}
+h3{font-size:15px;margin:14px 0 4px}
+p{margin:6px 0}
+.meta{color:var(--muted);font-size:13px}
+.verdict{display:inline-block;padding:1px 8px;border-radius:3px;font-size:13px;margin-left:8px}
+.ok{background:var(--ok)}.fail{background:var(--fail)}
+code{font:13px ui-monospace,Menlo,monospace;background:#f3f3f3;padding:0 3px}
+pre{font:12px/1.4 ui-monospace,Menlo,monospace;background:#f6f6f6;border:1px solid var(--line);padding:10px;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+mark{background:var(--mark);padding:0 2px}
+table{border-collapse:collapse;font-size:13px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:3px 7px;text-align:left;vertical-align:top}
+img{max-width:100%;border:1px solid var(--line);display:block;margin:8px 0}
+figure{margin:8px 0}figcaption{font-size:13px;color:var(--muted)}
+details{margin:8px 0}summary{cursor:pointer}
+</style>
+</head>
+<body>
+<h1>Proof: SUBJECT</h1>
+<p class="meta">Commit HASH on branch NAME, working tree clean/N files dirty, not pushed. Date. Environment: RIG/STAGING.</p>
+<p><strong>Not proven:</strong> LIMITATION (reason).</p>
+
+<h2>1. CLAIM <span class="verdict ok">confirmed</span></h2>
+<h3>Expectation</h3>
+<pre>User without permission  ->  GET /admin/x  ->  403, body without the permission, log with the permission</pre>
+<h3>Checked by</h3>
+<p>Command or step.</p>
+<h3>Observed</h3>
+<p>Result in one sentence.</p>
+<pre>$ command
+line
+<mark>HTTP/1.1 403 Forbidden</mark>
+line</pre>
+<figure><img src="01-claim/01-step.png" alt="What the image shows"><figcaption>Frame: the spot that matters.</figcaption></figure>
+<p>Video: <a href="01-claim/video.webm">01-claim/video.webm</a></p>
+<details><summary>Full log</summary><pre>...</pre></details>
+
+<h2>2. MATRIX-CLAIM <span class="verdict ok">confirmed</span></h2>
+<h3>Expectation</h3>
+<p>Every role on every page: each cell holds a verdict, none left empty.</p>
+<table>
+<tr><th>Role \ Page</th><th>Start</th><th>Admin area</th><th>Roles</th></tr>
+<tr><td>Admin</td><td class="ok">open</td><td class="ok">open</td><td class="ok">open</td></tr>
+<tr><td>Reader</td><td class="ok">open</td><td class="ok">No access</td><td class="ok">No access</td></tr>
+<tr><td>No role</td><td class="ok">session gate</td><td class="fail">open (F1)</td><td class="ok">session gate</td></tr>
+</table>
+<p>Cells: <a href="02-matrix/results.json">02-matrix/results.json</a>, screenshots per cell in <code>02-matrix/</code>.</p>
+
+<h2>3. CLAIM <span class="verdict fail">not confirmed</span></h2>
+<h3>Expectation</h3>
+<p>...</p>
+<h3>Observed</h3>
+<p>What happened instead, with a reference to finding F1.</p>
+
+<h2>Findings ledger</h2>
+<table>
+<tr><th>#</th><th>Claim</th><th>What</th><th>Evidence</th></tr>
+<tr><td>F1</td><td>2 (No role x Admin area)</td><td>Bug, side effect or wrong behaviour in one sentence.</td><td><a href="02-matrix/log.txt">02-matrix/log.txt</a></td></tr>
+</table>
+
+<h2>UX/UI notes</h2>
+<table>
+<tr><th>#</th><th>Claim</th><th>What</th><th>Evidence</th></tr>
+<tr><td>U1</td><td>1</td><td>What looks bad or is awkward to use for a user.</td><td><a href="01-claim/03-step.png">01-claim/03-step.png</a></td></tr>
+</table>
+</body>
+</html>
